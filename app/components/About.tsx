@@ -11,7 +11,7 @@ const ABOUT_IMAGES = [
   "/about/sebastian_castro.jpg"
 ];
 
-const ROTATE_INTERVAL_MS = 4000;
+const ROTATE_INTERVAL_MS = 5000;
 
 export default function About() {
   const [index, setIndex] = useState(0);
@@ -34,18 +34,20 @@ export default function About() {
         </h2>
 
         <div className="mt-4 grid gap-6 lg:grid-cols-[minmax(0,280px)_1fr] lg:gap-8 lg:items-start">
-          {/* Photo — rotates every 3s with smooth crossfade */}
-          <div className="relative aspect-[3/4] max-h-[220px] w-full max-w-[200px] overflow-hidden rounded-lg bg-zinc-100 lg:max-h-[280px] lg:max-w-[280px]">
+          <div className="relative aspect-[3/4] w-full max-w-full overflow-hidden rounded-lg bg-zinc-100 md:max-h-[220px] md:max-w-[200px] lg:max-h-[280px] lg:max-w-[280px]">
             {ABOUT_IMAGES.map((src, i) => (
               <Image
                 key={src}
                 src={src}
                 alt="Sebastian Castro, filmmaker and director"
                 fill
-                sizes="(max-width: 1024px) 200px, 280px"
-                className="object-cover transition-opacity duration-700 ease-in-out"
-                style={{ opacity: index === i ? 1 : 0 }}
-                priority={i === 0}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 200px, 280px"
+                className="object-cover transition-opacity duration-500 ease-in-out"
+                style={{
+                  opacity: index === i ? 1 : 0,
+                  zIndex: index === i ? 1 : 0,
+                }}
+                priority
               />
             ))}
           </div>

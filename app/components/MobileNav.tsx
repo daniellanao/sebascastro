@@ -4,8 +4,8 @@ import { useState } from "react";
 
 const navItems = [
   { label: "Commercials", href: "#commercials" },
-  { label: "About", href: "#about" },
   { label: "Awards", href: "#awards" },
+  { label: "About Me", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -22,9 +22,14 @@ export default function MobileNav() {
       <a
         href="#commercials"
         onClick={closeMenu}
-        className="font-display text-sm tracking-[0.2em] text-black"
+        className="flex flex-col"
       >
-        PORTFOLIO
+        <span className="font-montserrat font-extrabold text-lg text-black">
+          Sebastian Castro
+        </span>
+        <span className="font-montserrat text-xs text-black/70">
+          Director & Producer
+        </span>
       </a>
 
       <button
@@ -52,12 +57,31 @@ export default function MobileNav() {
         aria-hidden={!open}
       >
         <nav className="flex flex-col gap-0 py-4">
-          {navItems.map((item) => (
+          {navItems.slice(0, 1).map((item) => (
             <a
               key={item.href}
               href={item.href}
               onClick={closeMenu}
-              className="px-6 py-4 font-display text-sm tracking-[0.25em] text-black/70 transition-colors hover:bg-black/5 hover:text-black"
+              className="px-6 py-4 font-display text-sm text-black/70 transition-colors hover:bg-black/5 hover:text-black"
+            >
+              {item.label}
+            </a>
+          ))}
+          <a
+            href="https://elzorrophotography.mypixieset.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={closeMenu}
+            className="px-6 py-4 font-display text-sm text-black/70 transition-colors hover:bg-black/5 hover:text-black"
+          >
+            Photography
+          </a>
+          {navItems.slice(1).map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={closeMenu}
+              className="px-6 py-4 font-display text-sm text-black/70 transition-colors hover:bg-black/5 hover:text-black"
             >
               {item.label}
             </a>

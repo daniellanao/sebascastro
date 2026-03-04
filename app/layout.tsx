@@ -14,9 +14,42 @@ const montserrat = Montserrat({
   subsets: ["latin"],
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://sebascastro.com";
+
 export const metadata: Metadata = {
-  title: "Portfolio | Audiovisual Director",
-  description: "Portfolio of an audiovisual director — films, commercials, and visual storytelling.",
+  metadataBase: new URL(siteUrl),
+  title: "Sebastian Castro, Director & Producer",
+  description:
+    "Director and producer with over 15 years of experience producing high-quality video content for global brands. Cinematic storytelling, commercials, and branded content.",
+  openGraph: {
+    title: "Sebastian Castro, Director & Producer",
+    description:
+      "Director and producer with over 15 years of experience producing high-quality video content for global brands. Cinematic storytelling, commercials, and branded content.",
+    url: siteUrl,
+    siteName: "Sebastian Castro",
+    images: [
+      {
+        url: "/about/sebastian_castro_filmmaker.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Sebastian Castro, filmmaker and director",
+      },
+    ],
+    locale: "en",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sebastian Castro, Director & Producer",
+    description:
+      "Director and producer with over 15 years of experience producing high-quality video content for global brands.",
+    images: ["/about/sebastian_castro_filmmaker.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
