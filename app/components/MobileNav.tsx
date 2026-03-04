@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const navItems = [
-  { label: "Home", href: "#home" },
+  { label: "Commercials", href: "#commercials" },
   { label: "About", href: "#about" },
   { label: "Awards", href: "#awards" },
   { label: "Contact", href: "#contact" },
@@ -20,7 +20,7 @@ export default function MobileNav() {
       aria-label="Mobile navigation"
     >
       <a
-        href="#home"
+        href="#commercials"
         onClick={closeMenu}
         className="font-display text-sm tracking-[0.2em] text-black"
       >

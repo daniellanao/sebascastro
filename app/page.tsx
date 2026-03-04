@@ -1,22 +1,9 @@
+import Commercials from "./components/Commercials";
+
 export default function Home() {
   return (
     <>
-      <section
-        id="home"
-        className="flex min-h-screen flex-col justify-center bg-white px-8 py-24 pt-20 md:px-16 md:pt-24"
-      >
-        <p className="font-display text-sm tracking-[0.4em] text-amber-700/90">
-        Director & Producer        </p>
-        <h1 className="mt-4 font-montserrat text-5xl tracking-wide text-black md:text-7xl lg:text-8xl">
-          Sebastian
-          <br />
-          Castro
-        </h1>
-        <p className="mt-8 max-w-lg text-zinc-600">
-          Film, commercials, and visual narratives that capture attention and
-          move audiences.
-        </p>
-      </section>
+      <Commercials />
 
       <section
         id="about"

@@ -1,7 +1,7 @@
 "use client";
 
 const navItems = [
-  { label: "Home", href: "#home" },
+  { label: "Commercials", href: "#commercials" },
   { label: "About", href: "#about" },
   { label: "Awards", href: "#awards" },
   { label: "Contact", href: "#contact" },
@@ -17,7 +17,7 @@ export default function Sidebar() {
         <nav className="flex flex-col gap-6 items-start w-full">
           <div className="flex flex-col items-start">
             <a
-              href="#home"
+              href="#commercials"
               className="font-montserrat font-extrabold text-2xl text-black"
             >
               Sebastian Castro
