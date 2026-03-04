@@ -1,34 +1,15 @@
 import Commercials from "./components/Commercials";
+import About from "./components/About";
 
 export default function Home() {
   return (
     <>
       <Commercials />
-
-      <section
-        id="about"
-        className="min-h-screen border-t border-black/10 bg-white px-8 py-24 md:px-16"
-      >
-        <h2 className="font-display text-3xl tracking-[0.2em] text-black md:text-4xl">
-          ABOUT
-        </h2>
-        <div className="mt-12 grid gap-12 md:grid-cols-2 md:gap-16">
-          <p className="max-w-xl text-lg leading-relaxed text-zinc-600">
-            Director with a focus on narrative and visual craft. Every project
-            is approached with a clear vision and attention to detail, from
-            concept to final cut.
-          </p>
-          <p className="max-w-xl text-lg leading-relaxed text-zinc-600">
-            Experience across commercials, short films, music videos, and
-            branded content. Collaborating with agencies and brands to create
-            work that stands out.
-          </p>
-        </div>
-      </section>
+      <About />
 
       <section
         id="awards"
-        className="min-h-screen border-t border-black/10 bg-white px-8 py-24 md:px-16"
+        className="min-h-screen border-t border-black/10 bg-white px-8 py-12 md:px-16 md:py-16"
       >
         <h2 className="font-display text-3xl tracking-[0.2em] text-black md:text-4xl">
           AWARDS
@@ -54,7 +35,7 @@ export default function Home() {
 
       <section
         id="contact"
-        className="min-h-screen border-t border-black/10 bg-white px-8 py-24 md:px-16"
+        className="min-h-screen border-t border-black/10 bg-white px-8 py-12 md:px-16 md:py-16"
       >
         <h2 className="font-display text-3xl tracking-[0.2em] text-black md:text-4xl">
           CONTACT

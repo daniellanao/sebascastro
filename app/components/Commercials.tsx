@@ -100,7 +100,7 @@ export default function Commercials() {
   return (
     <section
       id="commercials"
-      className="min-h-screen bg-white px-6 py-24 pt-20 md:px-12 md:py-28 lg:px-16"
+      className="min-h-screen bg-white px-6 pt-8 pb-16 md:px-12 md:pt-10 md:pb-20 lg:px-16"
     >
       <div className="mx-auto max-w-[1600px]">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
