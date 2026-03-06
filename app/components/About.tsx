@@ -33,8 +33,8 @@ export default function About() {
           ABOUT ME
         </h2>
 
-        <div className="mt-4 grid gap-6 lg:grid-cols-[minmax(0,280px)_1fr] lg:gap-8 lg:items-start">
-          <div className="relative aspect-[3/4] w-full max-w-full overflow-hidden rounded-lg bg-zinc-100 md:max-h-[220px] md:max-w-[200px] lg:max-h-[280px] lg:max-w-[280px]">
+        <div className="mt-4 grid gap-6 lg:grid-cols-[minmax(0,280px)_1fr] lg:gap-8 lg:items-center">
+          <div className="relative aspect-[3/4] w-full max-w-full overflow-hidden rounded-lg bg-zinc-100 md:max-h-[267px] md:max-w-[200px] lg:max-h-[373px] lg:max-w-[280px] flex items-center justify-center">
             {ABOUT_IMAGES.map((src, i) => (
               <Image
                 key={src}
@@ -58,15 +58,10 @@ export default function About() {
             <h3 className="font-montserrat font-bold text-sm text-black">
                 Bio
               </h3>
-              <p className="text-sm leading-snug text-neutral-600 sm:text-base">
-                Director and producer with over 15 years of experience
-                producing high-quality video content for global brands and
-                organizations. Strong background in in-house content production,
-                post-production, and cinematic storytelling, with a proven
-                ability to translate brand strategy into engaging, clear, and
-                emotionally resonant video pieces.
+              <p className="text-sm leading-snug text-neutral-600 sm:text-base text-justify">
+                Director and producer with over 15 years of experience producing high-quality video content for global brands and organizations. Strong background in in-house content production, post-production, and cinematic storytelling, with a proven ability to translate brand strategy into engaging, clear, and emotionally resonant video pieces.
               </p>
-              <p className="text-sm leading-snug text-neutral-600 sm:text-base">
+              <p className="text-sm leading-snug text-neutral-600 sm:text-base text-justify">
                 Co-founder of an audiovisual production company, with extensive
                 hands-on experience across shooting, editing, color grading, and
                 creative execution. Comfortable working within brand guidelines,
@@ -78,7 +73,7 @@ export default function About() {
               <h3 className="font-montserrat font-bold text-sm text-black">
                 My Approach
               </h3>
-              <p className="text-sm leading-snug text-neutral-600 sm:text-base">
+              <p className="text-sm leading-snug text-neutral-600 sm:text-base text-justify">
                 My approach is rooted in the synergy between creative vision and
                 technical mastery. Having co-founded a production house, I
                 understand that a great piece of content is born from the
