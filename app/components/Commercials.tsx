@@ -103,7 +103,7 @@ export default function Commercials() {
       className="min-h-screen bg-white px-2 pt-20 pb-16 md:pt-2 md:pb-20"
     >
       <div className="mx-auto max-w-[1600px]">
-        <div className="grid grid-cols-2 gap-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
           {commercialFilms.map((film) => (
             <button
               key={film.id}
@@ -112,13 +112,25 @@ export default function Commercials() {
               className="group relative block w-full overflow-hidden rounded-lg bg-zinc-100 text-left shadow-sm ring-1 ring-black/5 transition-all duration-300 hover:shadow-xl hover:ring-black/10"
             >
               <div className="relative aspect-video overflow-hidden">
-                <Image
-                  src={film.image}
-                  alt={film.title}
-                  fill
-                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
-                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                />
+                {film.videoLoop ? (
+                  <video
+                    src={film.videoLoop}
+                    muted
+                    loop
+                    playsInline
+                    autoPlay
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                    aria-label={film.title}
+                  />
+                ) : (
+                  <Image
+                    src={film.image}
+                    alt={film.title}
+                    fill
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  />
+                )}
                 <div
                   className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 transition-colors duration-300 group-hover:opacity-100"
                   aria-hidden

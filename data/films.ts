@@ -6,6 +6,8 @@ export type Film = {
   image: string;
   /** Vimeo embed URL (e.g. https://player.vimeo.com/video/282393299?h=39f5af31ad). One per project is enough. */
   videoUrl?: string;
+  /** Optional local video path for card preview (loops, muted). When set, card shows video instead of image. */
+  videoLoop?: string;
 };
 
 /** Get all films for a project by its slug (projects can have multiple films, e.g. same title, different images) */
@@ -20,6 +22,7 @@ export function getProjectSlugs(): string[] {
 }
 
 export const films: Film[] = [
+  { id: "0", title: "SoaftSoap Hand Wash", slug: "soaftsoap_hand_wash", category: "Commercial", image: "/commercials/1_soaft_soap_hand_wash.jpg", videoUrl: "https://player.vimeo.com/video/273358001", videoLoop: "/commercials/1_soaft_soap_hand_wash_loop.mp4" },
   { id: "1", title: "SoaftSoap Hand Wash", slug: "soaftsoap_hand_wash", category: "Commercial", image: "/commercials/1_soaft_soap_hand_wash.jpg", videoUrl: "https://player.vimeo.com/video/273358001" },
   { id: "2", title: "Johnnie Walker Country Edition Peru", slug: "johnnie_walker_country_edition_peru", category: "Commercial", image: "/commercials/2_johnnie_walker_country_edition_peru.jpg" , videoUrl: "https://player.vimeo.com/video/282393299" },  
   { id: "3", title: "Movistar Quipu", slug: "movistar_quipu", category: "Commercial", image: "/commercials/3_movistar_quipu.jpg" , videoUrl: "https://player.vimeo.com/video/1168909523" },
@@ -43,4 +46,5 @@ export const films: Film[] = [
   { id: "21", title: "Faber Castell Dragón", slug: "faber_castell_dragon", category: "Commercial", image: "/commercials/20_faber_castell_dragon.jpg", videoUrl: "https://player.vimeo.com/video/273358652" },
   { id: "22", title: "Scotiabank Tu Turno", slug: "scotiabank_tu_turno", category: "Commercial", image: "/commercials/21_scotiabank_tu_turno.jpg", videoUrl: "https://player.vimeo.com/video/1168918133" },
   { id: "23", title: "Tottus Preciazo", slug: "tottus_preciazo", category: "Commercial", image: "/commercials/22_tottus_preciazo.jpg" , videoUrl: "https://player.vimeo.com/video/290602649"},
+  { id: "24", title: "Nike_the_cushioning_route", slug: "nike_the_cushioning_route", category: "Commercial", image: "/commercials/23_nike_the_cushioning_route.jpg" , videoUrl: "https://player.vimeo.com/video/290602649"},
 ];

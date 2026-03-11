@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Sebastian Castro, Director & Producer",
     description:
       "Director and producer with over 15 years of experience producing high-quality video content for global brands.",
-    images: ["/about/sebastian_castro_filmmaker.jpg"],
+    images: ["/about/sebastian_castro_filmmaker.jpg"],    
   },
   robots: {
     index: true,
