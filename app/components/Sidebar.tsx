@@ -6,8 +6,8 @@ import { usePathname } from "next/navigation";
 const navItems = [
   { label: "Advertising", href: "#commercials" },
   { label: "Documentaries", href: "/documentaries" },
-  { label: "Fashionfilm", href: "#fashionfilm" },
-  { label: "Film", href: "#film" },
+  { label: "Fashion Film", href: "/fashion_film" },
+  { label: "Film", href: "/film" },
   { label: "Photography", href: "https://elzorrophotography.mypixieset.com/", openInNewTab: true },
   { label: "Awards", href: "#awards" },
   { label: "About Me", href: "#about" },

@@ -1,26 +1,53 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navItems = [
-  { label: "Commercials", href: "#commercials" },
+  { label: "Advertising", href: "#commercials" },
+  { label: "Documentaries", href: "/documentaries" },
+  { label: "Fashionfilm", href: "/fashion_film" },
+  { label: "Film", href: "/film" },
+  { label: "Photography", href: "https://elzorrophotography.mypixieset.com/", openInNewTab: true },
   { label: "Awards", href: "#awards" },
   { label: "About Me", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 
+function isExternal(href: string) {
+  return href.startsWith("http://") || href.startsWith("https://");
+}
+
+function isInternalRoute(href: string) {
+  return href.startsWith("/") && !href.startsWith("//");
+}
+
+function isAnchor(href: string) {
+  return href.startsWith("#");
+}
+
+const linkClass =
+  "px-6 py-4 font-display text-sm text-black/70 transition-colors hover:bg-black/5 hover:text-black block w-full text-left";
+
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   const closeMenu = () => setOpen(false);
+
+  /** On other pages, anchor links must go to home with hash (e.g. /#commercials). */
+  const hrefFor = (href: string) =>
+    isAnchor(href) && !isHome ? `/${href}` : href;
 
   return (
     <header
       className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between border-b border-black/10 bg-white/95 px-6 py-4 backdrop-blur-md md:hidden"
       aria-label="Mobile navigation"
     >
-      <a
-        href="#commercials"
+      <Link
+        href={hrefFor("#commercials")}
         onClick={closeMenu}
         className="flex flex-col"
       >
@@ -30,7 +57,7 @@ export default function MobileNav() {
         <span className="font-montserrat text-xs text-black/70">
           Director & Producer
         </span>
-      </a>
+      </Link>
 
       <button
         type="button"
@@ -57,35 +84,50 @@ export default function MobileNav() {
         aria-hidden={!open}
       >
         <nav className="flex flex-col gap-0 py-4">
-          {navItems.slice(0, 1).map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              onClick={closeMenu}
-              className="px-6 py-4 font-display text-sm text-black/70 transition-colors hover:bg-black/5 hover:text-black"
-            >
-              {item.label}
-            </a>
-          ))}
-          <a
-            href="https://elzorrophotography.mypixieset.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={closeMenu}
-            className="px-6 py-4 font-display text-sm text-black/70 transition-colors hover:bg-black/5 hover:text-black"
-          >
-            Photography
-          </a>
-          {navItems.slice(1).map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              onClick={closeMenu}
-              className="px-6 py-4 font-display text-sm text-black/70 transition-colors hover:bg-black/5 hover:text-black"
-            >
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const effectiveHref = hrefFor(item.href);
+            const external = item.openInNewTab ?? isExternal(item.href);
+            const internal = isInternalRoute(effectiveHref);
+
+            if (internal) {
+              return (
+                <Link
+                  key={item.href}
+                  href={effectiveHref}
+                  onClick={closeMenu}
+                  className={linkClass}
+                >
+                  {item.label}
+                </Link>
+              );
+            }
+
+            if (external) {
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={closeMenu}
+                  className={linkClass}
+                >
+                  {item.label}
+                </a>
+              );
+            }
+
+            return (
+              <a
+                key={item.href}
+                href={effectiveHref}
+                onClick={closeMenu}
+                className={linkClass}
+              >
+                {item.label}
+              </a>
+            );
+          })}
         </nav>
       </div>
     </header>
