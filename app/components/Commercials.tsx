@@ -103,7 +103,7 @@ export default function Commercials() {
       className="min-h-screen bg-white px-2 pt-20 pb-16 md:pt-2 md:pb-20"
     >
       <div className="mx-auto max-w-[1600px]">
-        <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-2 md:grid-cols-3">
           {commercialFilms.map((film) => (
             <button
               key={film.id}
