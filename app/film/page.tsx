@@ -12,8 +12,11 @@ export default function FilmPage() {
   return (
     <section
       id="film"
-      className="min-h-screen bg-black flex items-center justify-center p-4 md:p-8"
+      className="min-h-screen bg-black flex flex-col items-center justify-center p-4 md:p-8"
     >
+      <h1 className="font-montserrat text-sm uppercase tracking-[0.4em] text-white/70 mb-8 md:mb-10">
+        Coming Soon
+      </h1>
       <div className="relative w-full max-w-5xl aspect-[3/4] md:aspect-video max-h-[90vh]">
         <Image
           src={FILM_IMAGE}
