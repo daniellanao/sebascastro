@@ -121,6 +121,8 @@ export default function Commercials() {
                     autoPlay
                     className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                     aria-label={film.title}
+                    preload="metadata"
+                    poster={film.image}
                   />
                 ) : (
                   <Image

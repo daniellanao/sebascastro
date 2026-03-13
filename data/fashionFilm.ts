@@ -1,7 +1,7 @@
 const BLOB_BASE =
   "https://jmdxivxptjvdta5b.public.blob.vercel-storage.com";
 
-export const fashionFilmVideoUrl = `${BLOB_BASE}/CHICHA.mp4`;
+export const fashionFilmVideoUrl = `${BLOB_BASE}/chicha.mp4`;
 
 export const fashionFilmImages = [
   `${BLOB_BASE}/DSC04188.jpg`,

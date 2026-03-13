@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Sebastian Castro",
     images: [
       {
-        url: "/about/sebastian_castro_filmmaker.jpg",
+        url: "/og_sebastian_castro.jpg",
         width: 1200,
         height: 630,
         alt: "Sebastian Castro, filmmaker and director",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Sebastian Castro, Director & Producer",
     description:
       "Director and producer with over 15 years of experience producing high-quality video content for global brands.",
-    images: ["/about/sebastian_castro_filmmaker.jpg"],    
+    images: ["/og_sebastian_castro.jpg"],    
   },
   robots: {
     index: true,
