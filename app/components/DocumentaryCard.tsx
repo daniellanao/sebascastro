@@ -2,7 +2,7 @@ import type { Documentary } from "@/data/documentaries";
 
 export default function DocumentaryCard({ doc }: { doc: Documentary }) {
   return (
-    <article className="mx-auto w-full max-w-4xl">
+    <article className="w-full max-w-4xl">
       <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-zinc-900 shadow-lg ring-1 ring-black/5">
         <iframe
           src={doc.videoUrl}
@@ -13,6 +13,11 @@ export default function DocumentaryCard({ doc }: { doc: Documentary }) {
           className="absolute inset-0 h-full w-full"
         />
       </div>
+      {doc.description && (
+        <p className="mt-4 font-montserrat text-sm text-black/80 leading-relaxed">
+          {doc.description}
+        </p>
+      )}
     </article>
   );
 }

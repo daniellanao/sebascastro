@@ -17,7 +17,7 @@ export default function DocumentariesPage() {
         <h2 className="font-montserrat font-bold text-xl text-black mb-2 md:text-2xl">
           DOCUMENTARIES
         </h2>
-        <div className="flex flex-col gap-2">
+        <div className="mt-10 flex flex-col gap-2 md:mt-12">
           {documentaries.map((doc) => (
             <DocumentaryCard key={doc.id} doc={doc} />
           ))}

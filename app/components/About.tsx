@@ -6,9 +6,7 @@ import { useEffect, useState } from "react";
 const ABOUT_IMAGES = [
   "/about/sebastian_castro_filmmaker.jpg",
   "/about/sebastian_castro_filmmaker2.jpg",
-  "/about/sebastian_castro_nike.jpg",
   "/about/sebastian_castro_unicef.jpg",
-  "/about/sebastian_castro.jpg"
 ];
 
 const ROTATE_INTERVAL_MS = 5000;

@@ -14,10 +14,10 @@ export default function FashionFilmHero({ videoUrl }: { videoUrl: string }) {
       <div className="relative aspect-video w-full max-w-[1400px] mx-auto overflow-hidden">
         <video
           src={videoUrl}
-          muted
           loop
           playsInline
           autoPlay
+          controls
           className="absolute inset-0 h-full w-full object-cover"
           aria-label="CHICHA fashion film"
         />
