@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Sidebar from "./components/Sidebar";
 import MobileNav from "./components/MobileNav";
@@ -68,6 +69,7 @@ export default function RootLayout({
         <Sidebar />
         <MobileNav />
         <div className="min-h-screen md:pl-56">{children}</div>
+        <Analytics />
       </body>
     </html>
   );
