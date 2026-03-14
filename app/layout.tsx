@@ -15,10 +15,13 @@ const montserrat = Montserrat({
 });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://sebascastro.com";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.sebascastro.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: siteUrl,
+  },
   title: "Sebastian Castro, Director & Producer",
   description:
     "Director and producer with over 15 years of experience producing high-quality video content for global brands. Cinematic storytelling, commercials, and branded content.",
