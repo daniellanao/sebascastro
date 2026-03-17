@@ -1,6 +1,6 @@
 "use client";
 
-export default function FashionFilmHero({ videoUrl }: { videoUrl: string }) {
+export default function FashionFilmHero() {
   return (
     <div className="relative w-full bg-black">
       <div className="mx-auto max-w-[1400px] px-4 pt-20 pb-8 md:pt-8 md:pb-12 md:px-8 lg:px-12">
@@ -12,14 +12,14 @@ export default function FashionFilmHero({ videoUrl }: { videoUrl: string }) {
         </p>
       </div>
       <div className="relative aspect-video w-full max-w-[1400px] mx-auto overflow-hidden">
-        <video
-          src={videoUrl}
-          loop
-          playsInline
-          autoPlay
-          controls
-          className="absolute inset-0 h-full w-full object-cover"
-          aria-label="CHICHA fashion film"
+        <iframe
+          title="vimeo-player"
+          src="https://player.vimeo.com/video/1173338698?h=37eaed0d2c&autoplay=1&muted=1&loop=1&autopause=0"
+          className="absolute inset-0 h-full w-full"
+          frameBorder={0}
+          referrerPolicy="strict-origin-when-cross-origin"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+          allowFullScreen
         />
       </div>
       <div className="h-12 md:h-16 bg-black" aria-hidden />

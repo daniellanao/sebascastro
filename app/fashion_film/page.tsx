@@ -1,6 +1,5 @@
-import { fashionFilmVideoUrl } from "@/data/fashionFilm";
-import FashionFilmHero from "./FashionFilmHero";
 import FashionFilmGallery from "./FashionFilmGallery";
+import FashionFilmHero from "./FashionFilmHero";
 
 export const metadata = {
   title: "Fashion Film | Sebastian Castro",
@@ -14,9 +13,7 @@ export default function FashionFilmPage() {
       id="fashionfilm"
       className="min-h-screen bg-black"
     >
-      {/* Hero: video + title */}
-      <FashionFilmHero videoUrl={fashionFilmVideoUrl} />
-
+      <FashionFilmHero />
       {/* Description */}
       <div className="mx-auto max-w-[1400px] px-4 py-12 md:px-8 md:py-16 lg:px-12">
         <p className="font-montserrat text-xs uppercase tracking-[0.3em] text-white/50 mb-6 md:mb-8">
