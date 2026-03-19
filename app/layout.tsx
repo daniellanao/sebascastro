@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
-import Sidebar from "./components/Sidebar";
-import MobileNav from "./components/MobileNav";
+import AppShell from "./components/AppShell";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -66,9 +65,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${montserrat.variable} antialiased font-sans`}
       >
-        <Sidebar />
-        <MobileNav />
-        <div className="min-h-screen md:pl-56">{children}</div>
+        <AppShell>{children}</AppShell>
         <Analytics />
       </body>
     </html>
